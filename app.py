@@ -87,13 +87,13 @@ def mostrar_post_instagram(destino, fecha, presupuesto):
     return f"""
 ✈️ {destino.upper()}
 
-🔥 Oferta encontrada
+Vuelos encontrados
 
 📅 {fecha:%d/%m/%Y}
 
-💰 Desde USD {presupuesto}
+💰 Desde $ {presupuesto}
 
-🌎 ¡Animate! ✨
+🌎 ¡Animate a viajar! ✨
 """
 
 st.info(
