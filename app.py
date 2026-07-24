@@ -51,24 +51,21 @@ if buscar:
 
     else:
 
-#-----------------------------------------------------
-# Contenedor de resultados
-#-----------------------------------------------------
-with st.container():
+        with st.container():
 
-    st.success("Búsqueda realizada")
+            st.success("Búsqueda realizada")
 
-    st.subheader("Resumen")
+            st.subheader("Resumen")
 
-    st.write(f"**Origen:** {origen}")
+            st.write(f"**Origen:** {origen}")
 
-    st.write(f"**Destino:** {destino}")
+            st.write(f"**Destino:** {destino}")
 
-    st.write(f"**Presupuesto:** USD {presupuesto}")
+            st.write(f"**Presupuesto:** USD {presupuesto}")
 
 #Resultado
 
-post = f"""
+            post = f"""
 ✈️ {destino.upper()}
 
 🔥 Oferta encontrada
@@ -80,7 +77,7 @@ post = f"""
 🌎  ¡Animate! ✨
 """
 
-st.info(post)
+            st.info(post)
 
 #--------------------------------------------------
 #Funciones
@@ -92,22 +89,21 @@ def mostrar_post_instagram(destino, fecha, presupuesto):
 
 🔥 Oferta encontrada
 
-📅 {fecha}
+📅 {fecha:%d/%m/%Y}
 
 💰 Desde USD {presupuesto}
 
-Guardá este post.
+🌎 ¡Animate! ✨
 """
 
-#Interfaz
+st.info(
+    mostrar_post_instagram(
+        destino,
+        fecha_inicio,
+        presupuesto
+    )
+)
 
-col1, col2 = st.columns(2)
-
-with col1:
-    origen = st.text_input("Origen")
-
-with col2:
-    destino = st.text_input("Destino")
 
 
 
